@@ -1,7 +1,7 @@
-package com.yennth.demo.tutor.B1.controller;
+package com.yennth.demo.tutor.B1_CRUD.controller;
 
-import com.yennth.demo.tutor.B1.entity.MayTinh;
-import com.yennth.demo.tutor.B1.service.IMayTinh;
+import com.yennth.demo.tutor.B1_CRUD.entity.MayTinh;
+import com.yennth.demo.tutor.B1_CRUD.service.IMayTinh;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.yennth.demo.tutor.B1.entity;
+package com.yennth.demo.tutor.B1_CRUD.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
