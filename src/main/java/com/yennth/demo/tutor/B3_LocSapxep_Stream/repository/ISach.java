@@ -16,20 +16,20 @@ public interface ISach extends JpaRepository<Sach, Integer> {
 
     @Query(value = """
             SELECT new com.yennth.demo.tutor.B3_LocSapxep_Stream.response.SachRespose(s.ma, s.ten, s.ngayXuatBan, s.soTrang, s.donGia, nxb.ten) 
-            FROM Sach s JOIN NhaXuatBan nxb ON s.nhaXuatBan.id = nxb.id
+            FROM B1_Sach s JOIN NhaXuatBan nxb ON s.nhaXuatBan.id = nxb.id
             """
     )
     public List<SachRespose> listSachRespose();
 
     @Query(value = """
             SELECT new com.yennth.demo.tutor.B3_LocSapxep_Stream.response.SachRespose(s.ma, s.ten, s.ngayXuatBan, s.soTrang, s.donGia, nxb.ten) 
-            FROM Sach s JOIN NhaXuatBan nxb ON s.nhaXuatBan.id = nxb.id
+            FROM B1_Sach s JOIN NhaXuatBan nxb ON s.nhaXuatBan.id = nxb.id
             """
     )
     public List<SachRespose> listSachRespose(Pageable page);
 
     @Transactional
     @Modifying
-    @Query(value = "DELETE FROM Sach WHERE ma = :ma ")
+    @Query(value = "DELETE FROM B1_Sach WHERE ma = :ma ")
     void deleteByMa(@Param("ma") String ma);
 }
