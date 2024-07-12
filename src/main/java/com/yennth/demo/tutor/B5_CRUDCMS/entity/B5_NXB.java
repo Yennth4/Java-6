@@ -1,4 +1,4 @@
-package com.yennth.demo.btvn.B1_Sach_NXB.entity;
+package com.yennth.demo.tutor.B5_CRUDCMS.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,21 +7,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@ToString
 @Entity
 @Table(name = "nxb")
-public class B1_NhaXuatBan {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class B5_NXB {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

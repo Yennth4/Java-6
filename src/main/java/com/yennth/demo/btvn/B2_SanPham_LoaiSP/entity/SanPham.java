@@ -1,4 +1,4 @@
-package com.yennth.demo.tutor.B3_LocSapxep_Stream.entity;
+package com.yennth.demo.btvn.B2_SanPham_LoaiSP.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Getter
@@ -24,32 +25,38 @@ import java.util.Date;
 @Builder
 @ToString
 @Entity
-@Table(name = "sach")
-public class Sach {
+@Table(name = "san_pham")
+public class SanPham {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "Ma")
+    @Column(name = "ma")
     private String ma;
 
-    @Column(name = "Ten")
+    @Column(name = "ten")
     private String ten;
 
-    @Column(name = "NgayXuatBan")
-    private Date ngayXuatBan;
+    @Column(name = "ngay_san_xuat")
+    private Date ngaySanXuat;
 
-    @Column(name = "SoTrang")
-    private Integer soTrang;
+    @Column(name = "website")
+    private String website;
 
-    @Column(name = "DonGia")
-    private Double donGia;
+    @Column(name = "mo_ta")
+    private String moTa;
 
-    @ManyToOne
-    @JoinColumn(name = "IdNXB", referencedColumnName = "id")
-    private NhaXuatBan nhaXuatBan;
+    @Column(name = "gia_ban")
+    private BigDecimal giaBan;
 
-    @Column(name = "TrangThai")
+    @Column(name = "so_luong")
+    private Integer soLuong;
+
+    @Column(name = "trang_thai")
     private Integer trangThai;
+
+    @ManyToOne()
+    @JoinColumn(name = "id_loai_san_pham" , referencedColumnName = "id")
+    private LoaiSanPham loaiSanPham;
 }

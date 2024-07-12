@@ -1,4 +1,4 @@
-package com.yennth.demo.btvn.B1_Sach_NXB.entity;
+package com.yennth.demo.btvn.B2_SanPham_LoaiSP.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,8 +20,8 @@ import lombok.ToString;
 @Builder
 @ToString
 @Entity
-@Table(name = "nxb")
-public class B1_NhaXuatBan {
+@Table(name = "loai_san_pham")
+public class LoaiSanPham {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,4 +32,5 @@ public class B1_NhaXuatBan {
 
     @Column(name = "ten")
     private String ten;
+
 }

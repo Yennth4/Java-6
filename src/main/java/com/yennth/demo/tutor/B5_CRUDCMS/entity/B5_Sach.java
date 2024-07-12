@@ -1,5 +1,7 @@
-package com.yennth.demo.tutor.B3_LocSapxep_Stream.entity;
+package com.yennth.demo.tutor.B5_CRUDCMS.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.yennth.demo.tutor.B3_LocSapxep_Stream.entity.NhaXuatBan;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,7 +27,9 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "sach")
-public class Sach {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
+public class B5_Sach {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,4 +56,7 @@ public class Sach {
 
     @Column(name = "TrangThai")
     private Integer trangThai;
+
+    public void setNhaXuatBan(B5_NXB b5Nxb) {
+    }
 }

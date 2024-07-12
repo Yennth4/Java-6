@@ -24,7 +24,7 @@ import java.util.Date;
 @Builder
 @ToString
 @Entity
-@Table(name = "Sach")
+@Table(name = "sach")
 public class B1_Sach {
 
     @Id
