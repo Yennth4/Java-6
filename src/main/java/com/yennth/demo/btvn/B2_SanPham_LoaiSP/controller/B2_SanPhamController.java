@@ -51,7 +51,7 @@ public class B2_SanPhamController {
     @DeleteMapping("delete")
     private String delete(@RequestParam Integer id) {
         sanPhamService.deleteById(id);
-        return "Delete success " + id;
+        return "Delete success id " + id;
     }
 
     /**
