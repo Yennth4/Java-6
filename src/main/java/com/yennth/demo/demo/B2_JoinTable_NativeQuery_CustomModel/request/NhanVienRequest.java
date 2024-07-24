@@ -1,10 +1,8 @@
 package com.yennth.demo.demo.B2_JoinTable_NativeQuery_CustomModel.request;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -22,8 +20,6 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @ToString
-@Entity
-@Table(name = "nhan_vien")
 public class NhanVienRequest {
 
     @Id

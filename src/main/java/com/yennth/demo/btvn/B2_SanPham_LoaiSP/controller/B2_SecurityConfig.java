@@ -1,4 +1,5 @@
 package com.yennth.demo.btvn.B2_SanPham_LoaiSP.controller;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -13,24 +14,25 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class B2_SecurityConfig {
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable())
+                .csrf(csrf -> csrf.disable()) // Tắt CSRF protection
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/de2/san-pham/**").authenticated()
-                                .anyRequest().permitAll()
+                                .requestMatchers("/de2/san-pham/**").authenticated() // Bảo vệ API hiển thị danh sách Sách
+                                .anyRequest().permitAll() // Cho phép tất cả các yêu cầu khác không cần xác thực
                 )
-                .httpBasic(Customizer.withDefaults());
+                .httpBasic(Customizer.withDefaults()); // Sử dụng HTTP Basic Authentication với cấu hình mặc định
         return http.build();
     }
 
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withDefaultPasswordEncoder()
-                .username("HangNT169") //Set user
-                .password("123@123") //Set password
+                .username("HangNT169") // Tên đăng nhập mặc định
+                .password("123@123") // Mật khẩu mặc định
                 .build();
         return new InMemoryUserDetailsManager(user);
     }

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -65,21 +64,4 @@ public class B3_BanController {
         banService.save(ban);
         return "Them thanh cong";
     }
-
-//
-//    @PutMapping("update")
-//    public String update(B3_BanRequest banRequest) {
-//        B3_Ban ban = new B3_Ban();
-//        ban.setId(banRequest.getId());
-//        ban.setMa(banRequest.getMa());
-//        ban.setTen(banRequest.getTen());
-//        ban.setNgaySinh(banRequest.getNgaySinh());
-//        ban.setSoThich(banRequest.getSoThich());
-//        ban.setGioiTinh(banRequest.getGioiTinh());
-//        ban.setTrangThai(banRequest.getTrangThai());
-//        ban.setMqh(mqhService.findById(banRequest.getIdMQH()).get());
-//
-//        banService.save(ban);
-//        return "Sua thanh cong ma " + banRequest.getMa();
-//    }
 }

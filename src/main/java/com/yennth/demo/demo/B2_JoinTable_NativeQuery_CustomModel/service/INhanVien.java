@@ -29,7 +29,7 @@ public interface INhanVien extends JpaRepository<NhanVien, Integer> {
     List<NhanVienRespose> listNhanVienResponse();
 
 
-//    Phan trang
+    //    Phan trang
     @Query(value = """
             SELECT new com.yennth.demo.demo.B2_JoinTable_NativeQuery_CustomModel.response.NhanVienRespose(nv.ma,nv.ten,nv.gioiTinh,cv.ten) 
             FROM NhanVien nv JOIN ChucVu cv ON nv.chucVu.id = cv.id
