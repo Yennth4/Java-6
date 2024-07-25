@@ -1,13 +1,10 @@
-package com.yennth.demo.demo.B3_LocSapxep_Stream.entity;
+package com.yennth.demo.btvn.B5_XeMay_Stream_Filter.entity;
 
-import com.yennth.demo.btvn.B1_Sach_NXB.entity.B1_NhaXuatBan;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,8 +13,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Date;
-
 @Getter
 @Setter
 @AllArgsConstructor
@@ -25,8 +20,8 @@ import java.util.Date;
 @Builder
 @ToString
 @Entity
-@Table(name = "sach")
-public class Sach {
+@Table(name = "loai_xe_may")
+public class B5_LoaiXeMay {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,20 +32,4 @@ public class Sach {
 
     @Column(name = "ten")
     private String ten;
-
-    @Column(name = "ngay_xuat_ban")
-    private Date ngayXuatBan;
-
-    @Column(name = "so_trang")
-    private Integer soTrang;
-
-    @Column(name = "don_gia")
-    private Double donGia;
-
-    @ManyToOne
-    @JoinColumn(name = "id_nha_xuat_ban", referencedColumnName = "id")
-    private NhaXuatBan nhaXuatBan;
-
-    @Column(name = "trang_thai")
-    private Integer trangThai;
 }

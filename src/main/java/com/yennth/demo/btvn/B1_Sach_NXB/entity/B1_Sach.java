@@ -31,25 +31,25 @@ public class B1_Sach {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "Ma")
+    @Column(name = "ma")
     private String ma;
 
-    @Column(name = "Ten")
+    @Column(name = "ten")
     private String ten;
 
-    @Column(name = "NgayXuatBan")
+    @Column(name = "ngay_xuat_ban")
     private Date ngayXuatBan;
 
-    @Column(name = "SoTrang")
+    @Column(name = "so_trang")
     private Integer soTrang;
 
-    @Column(name = "DonGia")
+    @Column(name = "don_gia")
     private Double donGia;
 
     @ManyToOne
-    @JoinColumn(name = "IdNXB", referencedColumnName = "id")
+    @JoinColumn(name = "id_nha_xuat_ban", referencedColumnName = "id")
     private B1_NhaXuatBan nhaXuatBan;
 
-    @Column(name = "TrangThai")
+    @Column(name = "trang_thai")
     private Integer trangThai;
 }

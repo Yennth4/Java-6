@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
 public interface B3_IBan extends JpaRepository<B3_Ban, Integer> {
@@ -31,4 +30,8 @@ public interface B3_IBan extends JpaRepository<B3_Ban, Integer> {
     @Modifying
     @Query(value = "DELETE FROM B3_Ban WHERE ma = :ma")
     void deleteByMa(@Param("ma") String ma);
+
+    @Transactional
+    @Query(value = "SELECT b FROM B3_Ban b WHERE b.ma = :ma")
+    B3_Ban findByMa(@Param("ma") String ma);
 }

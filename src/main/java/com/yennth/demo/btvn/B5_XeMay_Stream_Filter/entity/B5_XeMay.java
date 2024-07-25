@@ -1,4 +1,4 @@
-package com.yennth.demo.demo.B2_JoinTable_NativeQuery_CustomModel.entity;
+package com.yennth.demo.btvn.B5_XeMay_Stream_Filter.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Getter
@@ -24,8 +25,8 @@ import java.util.Date;
 @Builder
 @ToString
 @Entity
-@Table(name = "nhan_vien")
-public class NhanVien {
+@Table(name = "xe_may")
+public class B5_XeMay {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,32 +38,28 @@ public class NhanVien {
     @Column(name = "ten")
     private String ten;
 
-    @Column(name = "ten_dem")
-    private String tenDem;
+    @Column(name = "ngay_san_xuat")
+    private Date ngaySanXuat;
 
-    @Column(name = "ho")
-    private String ho;
+    @Column(name = "mo_ta")
+    private String moTa;
 
-    @Column(name = "gioi_tinh")
-    private String gioiTinh;
+    @Column(name = "gia_nhap")
+    private BigDecimal giaNhap;
 
-    @Column(name = "ngay_sinh")
-    private Date ngaySinh;
+    @Column(name = "gia_ban")
+    private BigDecimal giaBan;
 
-    @Column(name = "dia_chi")
-    private String diaChi;
+    @Column(name = "so_luong")
+    private Integer soLuong;
 
-    @Column(name = "sdt")
-    private String sdt;
-
-    @Column(name = "mau_khau")
-    private String matKhau;
+    @Column(name = "website")
+    private String website;
 
     @ManyToOne
-    @JoinColumn(name = "id_chuc_vu", referencedColumnName = "id")
-    private ChucVu chucVu;
+    @JoinColumn(name = "id_loai_xe_may",referencedColumnName = "id")
+    private B5_LoaiXeMay loaiXeMay;
 
     @Column(name = "trang_thai")
     private Integer trangThai;
-
 }

@@ -46,7 +46,7 @@ public class B3_Ban {
     private Integer gioiTinh;
 
     @ManyToOne
-    @JoinColumn(name = "idMQH" , referencedColumnName = "id")
+    @JoinColumn(name = "id_moi_quan_he" , referencedColumnName = "id")
     private B3_MQH mqh;
 
     @Column(name = "trang_thai")

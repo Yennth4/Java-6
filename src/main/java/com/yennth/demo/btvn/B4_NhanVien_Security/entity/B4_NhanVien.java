@@ -1,4 +1,4 @@
-package com.yennth.demo.demo.B2_JoinTable_NativeQuery_CustomModel.entity;
+package com.yennth.demo.btvn.B4_NhanVien_Security.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,7 +25,7 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "nhan_vien")
-public class NhanVien {
+public class B4_NhanVien {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -60,7 +60,7 @@ public class NhanVien {
 
     @ManyToOne
     @JoinColumn(name = "id_chuc_vu", referencedColumnName = "id")
-    private ChucVu chucVu;
+    private B4_ChucVu chucVu;
 
     @Column(name = "trang_thai")
     private Integer trangThai;

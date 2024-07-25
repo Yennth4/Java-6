@@ -55,17 +55,11 @@ public class B3_SachController {
         return "Xoa thanh cong id " + ma;
     }
 
-//    @PostMapping("add")
-//    public Sach add(@RequestBody Sach sach) {
-//        return sachService.save(sach);
-//    }
-
     @PutMapping("update")
     public Sach update(@RequestBody Sach sach) {
         return sachService.save(sach);
     }
 
-    //    SachRequest
     @PostMapping("add")
     public String add(@RequestBody @Valid SachRequest sachRequest, BindingResult result) {
 
