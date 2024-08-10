@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "nxb")
+@Table(name = "nha_xuat_ban")
 @Getter
 @Setter
 @NoArgsConstructor

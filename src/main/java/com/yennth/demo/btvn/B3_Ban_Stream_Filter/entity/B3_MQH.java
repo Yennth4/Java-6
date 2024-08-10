@@ -20,7 +20,7 @@ import lombok.ToString;
 @Builder
 @ToString
 @Entity
-@Table(name = "mqh")
+@Table(name = "moi_quan_he")
 public class B3_MQH {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

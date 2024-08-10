@@ -1,7 +1,5 @@
 package com.yennth.demo.demo.B5_CRUDCMS.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.yennth.demo.demo.B3_LocSapxep_Stream.entity.NhaXuatBan;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,36 +25,31 @@ import java.util.Date;
 @ToString
 @Entity
 @Table(name = "sach")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-
 public class B5_Sach {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "Ma")
+    @Column(name = "ma")
     private String ma;
 
-    @Column(name = "Ten")
+    @Column(name = "ten")
     private String ten;
 
-    @Column(name = "NgayXuatBan")
+    @Column(name = "ngay_xuat_ban")
     private Date ngayXuatBan;
 
-    @Column(name = "SoTrang")
+    @Column(name = "so_trang")
     private Integer soTrang;
 
-    @Column(name = "DonGia")
+    @Column(name = "don_gia")
     private Double donGia;
 
     @ManyToOne
-    @JoinColumn(name = "IdNXB", referencedColumnName = "id")
-    private NhaXuatBan nhaXuatBan;
+    @JoinColumn(name = "id_nha_xuat_ban", referencedColumnName = "id")
+    private B5_NXB nhaXuatBan;
 
-    @Column(name = "TrangThai")
+    @Column(name = "trang_thai")
     private Integer trangThai;
-
-    public void setNhaXuatBan(B5_NXB b5Nxb) {
-    }
 }

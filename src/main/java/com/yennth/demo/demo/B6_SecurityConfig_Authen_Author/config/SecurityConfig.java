@@ -17,10 +17,9 @@ import java.util.List;
 
 //@Configuration
 //@EnableWebSecurity
-// kich hoat bao mat spring security
 public class SecurityConfig {
 
-//    @Bean
+    @Bean
     public UserDetailsService userDetailsService() {
         PasswordEncoder passwordEncoder = passwordEncoder();
 
@@ -42,7 +41,7 @@ public class SecurityConfig {
         return new InMemoryUserDetailsManager(listUserDetail);
     }
 
-//    @Bean
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 //        yeu cau bat buoc xac thuc khi truy cap: ADMIN, con lai thi k can
         httpSecurity.authorizeHttpRequests(
@@ -52,9 +51,8 @@ public class SecurityConfig {
         return httpSecurity.build();
     }
 
-//    @Bean
+    @Bean
     public PasswordEncoder passwordEncoder() {
-//        ma hoa mat khau
         return new BCryptPasswordEncoder();
     }
 
